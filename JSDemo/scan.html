@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	
+<input type="button" name="" value="扫一扫" onclick="scan()">
+<br/>
+<p id="result">扫描结果：</p>
+
+<script type="text/javascript">
+	//调用APP的扫描方法   h5->app
+	function scan(){
+		app.scan('scanResult');
+	}
+	
+	//扫描结果回调方法    app->h5
+	function scanResult(result){
+		document.getElementById("result").innerHTML = '扫描结果：' + result;  
+	}
+
+</script>
+
+</body>
+</html>
